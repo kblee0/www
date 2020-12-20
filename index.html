@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery Mobile Demos</title>
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+<style>
+img {
+  max-width: 100%;
+  height: auto;
+}
+</style>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+</body>
+<div data-role="page">
+	<div data-role="tabs">
+		<div data-role="navbar">
+			<ul>
+			  <li><a href="#one" data-theme="a" data-ajax="false">이원석</a></li>
+			  <li><a href="#two" data-theme="a" data-ajax="false">이예진</a></li>
+			</ul>
+		</div>
+		<div id="one" class="ui-content">
+			<img id="ss_wslee_img" src="http://192.168.4.72:8080/screenshot/screen_wslee.jpg">
+			<div class="ui-grid-b">
+				<div class="ui-block-a"><input id="ss_wslee" type="button" value="Screenshot" data-mini="true"></div>
+				<div class="ui-block-b"><a href="http://192.168.4.72:8080/ps" class="ui-shadow ui-btn ui-corner-all ui-mini">Process</a></div>
+				<div class="ui-block-c"><a href="http://192.168.4.72:8080/psall" class="ui-shadow ui-btn ui-corner-all ui-mini">Process(all)</a></div>
+			</div>
+			<form method="get" action="http://192.168.4.72:8080/message/send">
+				<div class="ui-field-contain">
+					<label for="text-15">Title:</label>
+					<input type="text" data-clear-btn="true" data-mini="true" name="t" id="text-15" value="경고 합니다">
+				</div>
+				<div class="ui-field-contain">
+					<label for="textarea-14">Message:</label>
+					<textarea data-mini="true" cols="40" rows="8" name="m" id="textarea-14">수업에 집중해서 공부 하세요.</textarea>
+				</div>
+				<button type="submit" id="submit-6" class="ui-shadow ui-btn ui-corner-all ui-mini">Send</button>
+			</form>
+		</div>
+		<div id="two" class="ui-content">
+			<img id="ss_yjlee_img" src="http://192.168.4.71:8080/screenshot/screen_wslee.jpg">
+			<div class="ui-grid-b">
+				<div class="ui-block-a"><input id="ss_yjlee" type="button" value="Screenshot" data-mini="true"></div>
+				<div class="ui-block-b"><a href="http://192.168.4.71:8080/ps" class="ui-shadow ui-btn ui-corner-all ui-mini">Process</a></div>
+				<div class="ui-block-c"><a href="http://192.168.4.71:8080/psall" class="ui-shadow ui-btn ui-corner-all ui-mini">Process(all)</a></div>
+			</div>
+			<form method="get" action="http://192.168.4.71:8080/message/send">
+				<div class="ui-field-contain">
+					<label for="text-15">Title:</label>
+					<input type="text" data-clear-btn="true" data-mini="true" name="t" id="text-15" value="경고 합니다">
+				</div>
+				<div class="ui-field-contain">
+					<label for="textarea-14">Message:</label>
+					<textarea data-mini="true" cols="40" rows="8" name="m" id="textarea-14">수업에 집중해서 공부 하세요.</textarea>
+				</div>
+				<button type="submit" id="submit-6" class="ui-shadow ui-btn ui-corner-all ui-mini">Send</button>
+			</form>
+		</div>
+	</div>
+</div>
+<script>
+	$("#ss_wslee").click(function javascript_onclikc() {
+		d = new Date();
+		$("#ss_wslee_img").attr("src", "http://192.168.4.72:8080/screenshot/screen_wslee.jpg?"+d.getTime());
+	});
+	$("#ss_yjlee").click(function javascript_onclikc() {
+		d = new Date();
+		$("#ss_yjlee_img").attr("src", "http://192.168.4.71:8080/screenshot/screen_yjlee.jpg?"+d.getTime());
+	});
+</script>
+</html>
